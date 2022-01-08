@@ -1,0 +1,5 @@
+name: PlayerHeadChanger
+version: '${project.version}'
+main: com.github.tanakanata.playerheadchanger.PlayerHeadChanger
+api-version: 1.18
+authors: [ tanakanata ]
