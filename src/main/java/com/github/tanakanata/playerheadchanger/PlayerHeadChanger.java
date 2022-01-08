@@ -44,11 +44,17 @@ public final class PlayerHeadChanger extends JavaPlugin implements Listener {
             return;
         }
 
+
         Player clicked_player = (Player) event.getRightClicked();
         SkullMeta skull_meta = (SkullMeta) item.getItemMeta();
+
+        if (skull_meta != null && skull_meta.getOwningPlayer() != null && skull_meta.getOwningPlayer().getName() != null && clicked_player.getName().equals(skull_meta.getOwningPlayer().getName())) {
+            return;
+        }
+
         skull_meta.setOwningPlayer(clicked_player);
         item.setItemMeta(skull_meta);
         player.sendMessage(clicked_player.getName()+"の頭に変更しました。");
         event.setCancelled(true);
-}
+    }
 }
